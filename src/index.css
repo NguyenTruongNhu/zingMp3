@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-shadow-no1 {
+    text-shadow: 1px 1px 0 #4a90e2, -1px 1px 0 #4a90e2, -1px -1px 0 #4a90e2, 1px -1px 0 #4a90e2;
+}
+.text-shadow-no2 {
+    text-shadow: 1px 1px 0 #50e3c2, -1px 1px 0 #50e3c2, -1px -1px 0 #50e3c2, 1px -1px 0 #50e3c2;
+}
+.text-shadow-no3 {
+    text-shadow: 1px 1px 0 #e35050, -1px 1px 0 #e35050, -1px -1px 0 #e35050, 1px -1px 0 #e35050;
+}
+.text-shadow-rest {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5),
+        1px -1px 0 rgba(0, 0, 0, 0.5);
+}
+.text-shadow-no4 {
+    text-shadow: 1px 1px 0 #af9ebd, -1px 1px 0 #af9ebd, -1px -1px 0 #af9ebd, 1px -1px 0 #af9ebd;
+}
+
+.slick-next:before,
+.slick-prev:before {
+    font-size: 38px !important;
+}
+
+.slick-next {
+    top: 45% !important;
+    right: 10px !important;
+}
+.slick-prev {
+    top: 45% !important;
+    left: -5px !important;
+    z-index: 100 !important;
+}
