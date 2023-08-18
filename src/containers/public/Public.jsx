@@ -8,6 +8,7 @@ import * as actions from '../../store/actions'
 const Public = () => {
     const [isShowRightSideBar, setIsShowRightSideBar] = useState(true)
     const { isLoading, scrollTop } = useSelector((state) => state.app)
+    const { curSongId } = useSelector((state) => state.music)
     const dispatch = useDispatch()
     const handleScrollTop = (e) => {
         if (e.target.scrollTop === 0) {
@@ -51,9 +52,11 @@ const Public = () => {
                 )}
             </div>
 
-            <div className="fixed z-50 bottom-0 left-0 right-0 h-[90px]">
-                <Player setIsShowRightSideBar={setIsShowRightSideBar} />
-            </div>
+            {curSongId && (
+                <div className="fixed z-50 bottom-0 left-0 right-0 h-[90px]">
+                    <Player setIsShowRightSideBar={setIsShowRightSideBar} />
+                </div>
+            )}
         </div>
     )
 }
