@@ -103,8 +103,12 @@ const ChartSection = () => {
     }, [chart])
 
     return (
-        <div className="px-[59px] mt-12  relative max-h-[430px] rounded-md">
-            <img src={bgchart} alt="bg-chart" className="w-full  object-cover rounded-md max-h-[430px]" />
+        <div className="px-[59px] mt-12  relative min-[1224px]:max-h-[430px] rounded-md">
+            <img
+                src={bgchart}
+                alt="bg-chart"
+                className="w-full  object-cover rounded-md min-[1224px]:max-h-[430px] h-[760px]"
+            />
             <div className="absolute top-0 z-10 left-[59px]  bg-[rgba(77,34,104,0.9)] right-[59px] bottom-0  rounded-md"></div>
             <div className="absolute top-0 z-20 left-[59px] right-[59px] bottom-0 p-3 flex flex-col gap-8 rounded-md">
                 <Link to={path.ZING_CHART} className="flex gap-2 items-center text-white hover:text-green-800">
@@ -113,7 +117,7 @@ const ChartSection = () => {
                         <BsFillPlayFill size={18} color="green" />
                     </span>
                 </Link>
-                <div className="flex gap-3 h-full">
+                <div className="min-[1224px]:flex-row flex flex-col gap-3 h-full">
                     <div className="flex-4 flex flex-col gap-2 ">
                         {rank
                             ?.filter((item, index) => index < 3)
@@ -136,7 +140,7 @@ const ChartSection = () => {
                             Xem thêm
                         </Link>
                     </div>
-                    <div className="flex-6 h-[90%] relative">
+                    <div className="flex-6 order-first min-[1224px]:order-last min-[1224px]:w-[500px] h-[90%] relative">
                         {data && <Line data={data} ref={chartRef} options={options} />}
                         <div
                             className="tooltip"

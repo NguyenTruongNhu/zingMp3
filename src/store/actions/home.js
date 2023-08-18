@@ -25,3 +25,7 @@ export const zeroScrollTop = (flag) => ({
     type: actionTypes.ZERO_SCROLLTOP,
     flag,
 })
+export const setCurrentWidth = (w) => ({
+    type: actionTypes.CURRENT_WIDTH,
+    w,
+})

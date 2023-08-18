@@ -15,12 +15,12 @@ const SearchPlaylist = () => {
             }
         }
         fetch()
-    }, [])
+    }, [searchData])
 
     return (
-        <div className="w-full flex-col flex gap-8 px-[43px]">
-            <h3>Playlist/Album</h3>
-            <div className="flex items-start flex-wrap justify-start ">
+        <div className="w-full  flex flex-col gap-8 px-[43px]">
+            <h3 className="text-[20px] font-bold ">Playlist/Album</h3>
+            <div className="flex items-start flex-wrap justify-between ">
                 {playlists &&
                     playlists?.items?.length > 0 &&
                     playlists.items?.map((item) => (

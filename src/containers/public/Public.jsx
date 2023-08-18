@@ -33,7 +33,9 @@ const Public = () => {
                     <div
                         className={`h-[70px] ${
                             scrollTop ? 'bg-transparent' : 'bg-main-300'
-                        } fixed top-0 left-[240px] right-[300px] z-50 px-[59px] flex items-center`}
+                        } fixed top-0 min-[1024px]:left-[240px] left-[70px]  ${
+                            isShowRightSideBar ? 'res1200:right-[300px]  right-0' : 'l right-0'
+                        } z-50 px-[59px] flex items-center`}
                     >
                         <Header />
                     </div>

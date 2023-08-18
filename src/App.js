@@ -20,9 +20,11 @@ import path from './utils/path'
 import * as actions from './store/actions'
 import { useDispatch } from 'react-redux'
 import { apiGetChartHome } from './apis'
+
 function App() {
     const dispatch = useDispatch()
     const [weekchart, setWeekchart] = useState(null)
+    const [currentWidth, setCurrentWidth] = useState(window.innerWidth)
     useEffect(() => {
         dispatch(actions.getHome())
         const fetchChartData = async () => {
@@ -31,6 +33,19 @@ function App() {
         }
         fetchChartData()
     }, [])
+
+    const setWidth = (e) => {
+        setCurrentWidth(e.target.innerWidth)
+    }
+    useEffect(() => {
+        window.addEventListener('resize', setWidth)
+        return () => {
+            window.removeEventListener('resize', setWidth)
+        }
+    }, [])
+    useEffect(() => {
+        dispatch(actions.setCurrentWidth(currentWidth))
+    }, [currentWidth])
     return (
         <>
             <div>

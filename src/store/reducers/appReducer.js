@@ -15,6 +15,7 @@ const initState = {
     rank: null,
     bxhNhacNew: null,
     scrollTop: true,
+    currentWidth: null,
 }
 const appReducer = (state = initState, action) => {
     switch (action.type) {
@@ -56,6 +57,11 @@ const appReducer = (state = initState, action) => {
             return {
                 ...state,
                 scrollTop: action.flag,
+            }
+        case actionTypes.CURRENT_WIDTH:
+            return {
+                ...state,
+                currentWidth: action.w,
             }
 
         default:

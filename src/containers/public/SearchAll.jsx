@@ -51,11 +51,16 @@ const SearchAll = () => {
             <div className="flex flex-col w-full">
                 <h3 className="text-lg font-bold mb-5">Bài hát</h3>
                 <div className="flex justify-between flex-wrap w-full">
-                    {searchData?.songs?.map((item, index) => (
-                        <div key={item.encodeId} className={`flex-auto w-[45%] ${index % 2 !== 0 ? 'pl-4' : 'pr-4'}`}>
-                            <List songData={item} isHideAlbum isHideNode={true} />
-                        </div>
-                    ))}
+                    {searchData?.songs
+                        ?.filter((i, index) => index < 6)
+                        ?.map((item, index) => (
+                            <div
+                                key={item.encodeId}
+                                className={`flex-auto w-[45%] ${index % 2 !== 0 ? 'pl-4' : 'pr-4'}`}
+                            >
+                                <List songData={item} isHideAlbum isHideNode={true} />
+                            </div>
+                        ))}
                 </div>
             </div>
             <div className="flex flex-col w-full">
